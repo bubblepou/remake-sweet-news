@@ -9,19 +9,19 @@ else if(localStorage.getItem('color') == 'mont'){
 }
 
 function fStrawberry(){
-document.getElementById('web-style').href="/strawberry-home.css";
+document.getElementById('web-style').href="./strawberry-home.css";
 document.getElementById('cuteimg').src="./man/strawberry-cute.png";
 localStorage.setItem('color','strawberry');
 }
 
 function fChoco(){
-    document.getElementById('web-style').href="/choco-home.css";
+    document.getElementById('web-style').href="./choco-home.css";
     document.getElementById('cuteimg').src="./man/choco-cute.png";
     localStorage.setItem('color','choco');
 }
 
 function fMont(){
-    document.getElementById('web-style').href="/mont-home.css";
+    document.getElementById('web-style').href="./mont-home.css";
     document.getElementById('cuteimg').src="./man/mont-cute.png";
     localStorage.setItem('color','mont');
 }
