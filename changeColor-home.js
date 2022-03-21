@@ -1,3 +1,31 @@
+/*resize image*/
+
+let images = document.getElementsByClassName('key-new-image')
+let div = document.getElementsByClassName('key-new')
+
+function Change_Height() {
+    for (let i = 0; i < images.length; i++) {
+        let div_height = div[i].clientHeight;
+        let image_height = images[i].clientHeight;
+        let div_weight = div[i].clientWidth;
+        let image_weight = images[i].clientWidth;
+        if (image_height - div_height < 0 && image_weight - div_weight >= 0) {
+            images[i].style.height = "100%";
+            images[i].style.weight = "auto";
+        }
+        else if (image_height - div_height >= 0 && image_weight - div_weight < 0) {
+            images[i].style.height = "auto";
+            images[i].style.weight = "100%";
+        };
+    };
+}
+
+Change_Height();
+
+window.onresize = Change_Height;
+
+/*Color*/
+
 if (localStorage.getItem('color') == 'strawberry') {
     fStrawberry()
 }
@@ -34,32 +62,3 @@ cBtn.addEventListener('click', fChoco)
 
 let mBtn = document.getElementById('mont');
 mBtn.addEventListener('click', fMont)
-
-
-
-/*resize image*/
-
-let images = document.getElementsByClassName('key-new-image')
-let div = document.getElementsByClassName('key-new')
-
-Change_Height();
-
-
-function Change_Height() {
-    for (let i = 0; i < images.length; i++) {
-        let div_height = div[i].clientHeight;
-        let image_height = images[i].clientHeight;
-        let div_weight = div[i].clientWidth;
-        let image_weight = images[i].clientWidth;
-        if (image_height - div_height < 0 && image_weight - div_weight >= 0) {
-            images[i].style.height = "100%";
-            images[i].style.weight = "auto";
-        }
-        else if (image_height - div_height >= 0 && image_weight - div_weight < 0) {
-            images[i].style.height = "auto";
-            images[i].style.weight = "100%";
-        };
-    };
-}
-
-window.onresize = Change_Height;
